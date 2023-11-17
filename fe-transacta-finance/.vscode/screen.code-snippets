@@ -1,0 +1,43 @@
+{
+  "reactNativeComponent": {
+    "prefix": "src",
+    "body": [
+      "import React from 'react';",
+      "import { View, Image, StyleSheet } from 'react-native';",
+      "// ----------------------------- UI kitten -----------------------------------",
+      "import { TopNavigation, StyleService, useStyleSheet, useTheme } from '@ui-kitten/components';",
+      "// ----------------------------- Navigation -----------------------------------",
+      "import {NavigationProp, useNavigation} from '@react-navigation/native';",
+      "// ----------------------------- Hooks ---------------------------------------",
+      "import { useLayout } from 'hooks';",
+      "// ----------------------------- Assets ---------------------------------------",
+      "import {Images} from 'assets/images';",
+      "// ----------------------------- Components && Elements -----------------------",
+      "",
+      "import { Container, Content, Text } from 'components';",
+      "",
+      "const ${1:NameScreen} = React.memo(() => {",
+      "  const theme = useTheme();",
+      "const styles = useStyleSheet(themedStyles);",
+      "  const { goBack } = useNavigation();",
+      "  const { height, width, top, bottom } = useLayout();",
+      "",
+      "  return (",
+      "    <Container style={styles.container}>",
+      "      <TopNavigation />",
+      "      <Content contentContainerStyle={styles.content}>",
+      "        <Text>${1:NameScreen}Screen</Text>",
+      "      </Content>",
+      "    </Container>",
+      "  );",
+      "});",
+      "",
+      "export default ${1:NameScreen};",
+      "",
+      "const themedStyles = StyleService.create({",
+      "  container: {",
+      "flex: 1},content:{}})"
+    ],
+    "description": "Screen"
+  }
+}

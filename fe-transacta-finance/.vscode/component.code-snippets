@@ -1,0 +1,29 @@
+{
+  "reactNativeComponent": {
+    "prefix": "comp",
+    "body": [
+      "import React from 'react';",
+      "import { View, Image, StyleSheet } from 'react-native';",
+      "",
+      "import Text from './Text';",
+      "",
+      "interface ${1:ComponentName}Props {}",
+      "",
+      "const ${1:ComponentName}:React.FC<${1:ComponentName}Props> = ({}) => {",
+      "  return (",
+      "    <View style={styles.container}>",
+      "      <Text>${1:ComponentName}</Text>",
+      "    </View>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};",
+      "",
+      "const styles = StyleSheet.create({",
+      "  container: {},",
+      "});",
+      ""
+    ],
+    "description": "comp"
+  }
+}
