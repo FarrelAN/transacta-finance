@@ -22,6 +22,7 @@ import { appSelector, ThemeMode } from "reduxs/reducers/app-reducer";
 
 // -------------------------------- Screens --------------------------------
 import { FinanceStackParamList } from "types/navigation-types";
+import AnalyseTransaction from "screens/Finance/AnalyseTransaction";
 import FinanceMain from "screens/Finance/FinanceMain";
 import Finance07 from "screens/Finance/Finance07";
 import FinanceIntro from "screens/Finance/FinanceIntro";
@@ -67,6 +68,7 @@ const AppContainer = () => {
             <Stack.Screen name="Authenticate" component={AuthenticateNavigator} />
             <Stack.Screen name="Ecommerce" component={EcommerceNavigator} /> */}
             <Stack.Screen name="Finance" component={FinanceMain} />
+            <Stack.Screen name="Analysis" component={AnalyseTransaction} />
           </Stack.Navigator>
         </View>
       </NavigationContainer>

@@ -8,6 +8,7 @@ export type RootStackParamList = {
   Ecommerce: NavigatorScreenParams<EcommerceStackParamList> | undefined;
   Profile: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
   Finance: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
+  Analysis: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
   Dashboard: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
   SlideMenu: NavigatorScreenParams<SlideMenuStackParamList> | undefined;
 };

@@ -1,10 +1,10 @@
-import {createNavigationContainerRef} from '@react-navigation/native';
+import { createNavigationContainerRef } from "@react-navigation/native";
 
 export const navigationRef = createNavigationContainerRef();
-export function navigate(name: any) {
+export function navigate(name: any, params?: object) {
   if (navigationRef.isReady()) {
     // @ts-ignore
-    navigationRef.navigate(name);
+    navigationRef.navigate(name, params);
   }
 }
 
@@ -18,7 +18,7 @@ export function reset(name: any) {
   if (navigationRef.isReady()) {
     navigationRef?.resetRoot({
       index: 0,
-      routes: [{name: name}],
+      routes: [{ name: name }],
     });
   }
 }
