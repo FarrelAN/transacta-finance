@@ -11,7 +11,7 @@ import EvaIcons from "types/eva-icon-enum";
 
 //onPress={() => navigate('Finance', { screen: 'Home' })}
 
-import Finance07 from "screens/Finance/Finance07";
+import Finance07 from "screens/Finance/Home";
 import FinanceMain from "screens/Finance/FinanceMain";
 import AnalyseTransaction from "screens/Finance/AnalyseTransaction";
 

@@ -7,6 +7,8 @@ export type RootStackParamList = {
   Authenticate: NavigatorScreenParams<AuthenticateStackParamList> | undefined;
   Ecommerce: NavigatorScreenParams<EcommerceStackParamList> | undefined;
   Profile: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
+  Login: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
+  Register: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
   Finance: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
   Analysis: NavigatorScreenParams<WalkthroughStackParamList> | undefined;
   Dashboard: NavigatorScreenParams<WalkthroughStackParamList> | undefined;

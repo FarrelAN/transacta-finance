@@ -10,6 +10,8 @@ import {
 } from "@ui-kitten/components";
 // ----------------------------- Navigation -----------------------------------
 import { NavigationProp, useNavigation } from "@react-navigation/native";
+import FinanceMain from "screens/Finance/FinanceMain";
+import { navigate } from "navigation/root-navigation";
 // ----------------------------- Hooks ---------------------------------------
 import { useLayout } from "hooks";
 // ----------------------------- Assets ---------------------------------------
@@ -23,16 +25,13 @@ import {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import ProgressBarLeaf from "./ProgressBarLeaf";
 import FirstStep from "./FirstStep";
-import SecondStep from "./SecondStep";
-import ThirdStep from "./ThirdStep";
 
-const Finance05 = React.memo(() => {
+const Register = React.memo(() => {
   const theme = useTheme();
   const styles = useStyleSheet(themedStyles);
-  const { goBack } = useNavigation();
   const { height, width, top, bottom } = useLayout();
+  const navigation = useNavigation();
 
   const [activeIndex, setActiveIndex] = React.useState(-1);
   const progress = useDerivedValue(() => {
@@ -40,40 +39,25 @@ const Finance05 = React.memo(() => {
   }, [activeIndex]);
 
   const onNext = () => {
-    setActiveIndex(activeIndex + 1);
-  };
-  const onPrv = () => {
-    if (activeIndex === 0) {
-      goBack();
-    } else {
-      setActiveIndex(activeIndex - 1);
-    }
+    navigate("Login");
   };
 
   return (
     <Container style={styles.container}>
-      <TopNavigation
-        alignment="center"
-        title="Input New Transaction"
-        accessoryLeft={() => <NavigationAction onPress={onPrv} />}
-      />
       <Content contentContainerStyle={styles.content}>
-        <ProgressBarLeaf progress={progress} length={3} />
         <ViewPager
           style={styles.viewPager}
           selectedIndex={activeIndex}
           onSelect={setActiveIndex}
         >
           <FirstStep onNext={onNext} />
-          <SecondStep onNext={onNext} />
-          <ThirdStep />
         </ViewPager>
       </Content>
     </Container>
   );
 });
 
-export default Finance05;
+export default Register;
 
 const themedStyles = StyleService.create({
   container: {

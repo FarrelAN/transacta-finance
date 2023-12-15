@@ -150,20 +150,33 @@ async function addTransactions(tr, user) {
   if (user) {
     const query = `INSERT INTO transaction_history (user_id, wallet_id, Amount, Description, Category) 
         VALUES (${user.user_id}, ${user.wallet_id}, ${Amount}, '${Description}', '${Category}')`;
-    const result = await db.query(query);
-    if (result.rowCount === 1) {
-      return {
-        message: "Transaction Added",
-      };
-    } else {
-      return {
-        message: "Error",
-      };
+
+    try {
+      await db.query("BEGIN");
+
+      // Insert the transaction into transaction_history
+      const result = await db.query(query);
+      if (result.rowCount !== 1) {
+        await db.query("ROLLBACK");
+        return { message: "Error" };
+      }
+
+      // Update the wallet balance based on the transaction amount
+      const updateBalanceQuery = `UPDATE wallet SET balance = balance + ${Amount} WHERE wallet_id = ${user.wallet_id}`;
+      const updateBalanceResult = await db.query(updateBalanceQuery);
+      if (updateBalanceResult.rowCount !== 1) {
+        await db.query("ROLLBACK");
+        return { message: "Error updating wallet balance" };
+      }
+
+      await db.query("COMMIT");
+      return { message: "Transaction Added" };
+    } catch (error) {
+      await db.query("ROLLBACK");
+      return { message: error.message || "Error occurred" };
     }
   } else {
-    return {
-      message: "User not logged in",
-    };
+    return { message: "User not logged in" };
   }
 }
 

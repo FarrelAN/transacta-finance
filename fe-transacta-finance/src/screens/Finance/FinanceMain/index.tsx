@@ -83,10 +83,9 @@ const Screen = () => {
   );
 };
 
-import Finance02 from "screens/Finance/Finance02";
-import Finance05 from "screens/Finance/Finance05";
+import Finance05 from "screens/Finance/InputTransaction";
 import Finance06 from "screens/Finance/Finance06";
-import Finance07 from "screens/Finance/Finance07";
+import Finance07 from "screens/Finance/Home";
 import Finance08 from "screens/Finance/Finance08";
 import FinanceIntro from "screens/Finance/FinanceIntro";
 import AnalyseTransaction from "../AnalyseTransaction";
@@ -230,9 +229,9 @@ const FinanceMain = () => {
         tabBar={(props) => <MyTabBar {...props} />}
       >
         <Tab.Screen name="Home" component={Finance07} />
-        <Tab.Screen name="My Wallet" component={Finance06} />
+        <Tab.Screen name="Statistics" component={Finance06} />
         <Tab.Screen name="More" component={Finance05} />
-        <Tab.Screen name="Goals" component={Screen} />
+        <Tab.Screen name="My Cards" component={Finance08} />
         <Tab.Screen name="Profile" component={Screen} />
       </Tab.Navigator>
     </LayoutCustom>

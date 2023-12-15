@@ -23,8 +23,10 @@ import { appSelector, ThemeMode } from "reduxs/reducers/app-reducer";
 // -------------------------------- Screens --------------------------------
 import { FinanceStackParamList } from "types/navigation-types";
 import AnalyseTransaction from "screens/Finance/AnalyseTransaction";
+import Login from "screens/Auth/Login";
+import Register from "screens/Auth/Register";
 import FinanceMain from "screens/Finance/FinanceMain";
-import Finance07 from "screens/Finance/Finance07";
+import Finance07 from "screens/Finance/Home";
 import FinanceIntro from "screens/Finance/FinanceIntro";
 
 enableScreens();
@@ -67,6 +69,8 @@ const AppContainer = () => {
             {/* <Stack.Screen name="Walkthrough" component={WalkthroughNavigator} />
             <Stack.Screen name="Authenticate" component={AuthenticateNavigator} />
             <Stack.Screen name="Ecommerce" component={EcommerceNavigator} /> */}
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
             <Stack.Screen name="Finance" component={FinanceMain} />
             <Stack.Screen name="Analysis" component={AnalyseTransaction} />
           </Stack.Navigator>

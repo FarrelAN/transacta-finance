@@ -36,7 +36,7 @@ const Finance08 = React.memo(() => {
   return (
     <Container style={styles.container}>
       <TopNavigation
-        title={() => <Text category="t5">{"Investment"}</Text>}
+        title={() => <Text category="t5">{"My Cards"}</Text>}
         alignment="center"
         style={styles.topNavigation}
         accessoryLeft={() => <RoundedButton icon={"menu"} onPress={goBack} />}

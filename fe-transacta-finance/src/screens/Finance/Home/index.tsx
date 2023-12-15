@@ -34,7 +34,7 @@ import { useSharedValue } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
 
 const Finance07 = React.memo(() => {
-  const { goBack } = useNavigation()
+  const { goBack } = useNavigation();
   const theme = useTheme();
   const styles = useStyleSheet(themedStyles);
   const { width } = useLayout();
@@ -55,11 +55,12 @@ const Finance07 = React.memo(() => {
   const progressValue = useSharedValue(0);
 
   const randomNames = [
-    'M. Farrel Athaillah N.',
-    'Prima Shalih',
-    'M. Najih Aflah',
+    "M. Farrel Athaillah N.",
+    "Prima Shalih",
+    "M. Najih Aflah",
   ];
-  const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
+  const randomName =
+    randomNames[Math.floor(Math.random() * randomNames.length)];
 
   return (
     <Container style={styles.container}>
